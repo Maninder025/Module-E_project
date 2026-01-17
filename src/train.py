@@ -2,20 +2,25 @@ import numpy as np
 import matplotlib.pyplot as plt
 import math
 from sklearn.metrics import mean_absolute_error, r2_score
+import json
 
 # Import your custom modules
 from src.data import load_and_preprocess_data
 from src.model import build_lstm_model, build_rf_model
 
 def main():
+    
     # ==========================================
     # --- CONFIGURATION SECTION ---
-    MODEL_TYPE = 'RF' # Change 'LSTM' to 'RF' to switch models
-    
-    FILE_PATH = 'weekly_dataset_with_total_unit_sold.xlsx - Sheet1.csv'
-    LOOK_BACK = 3
-    EPOCHS = 200
-    BATCH_SIZE = 1
+    with open('configs/config.json', 'r') as f:
+        config = json.load(f)
+
+    # Use variables from config instead of hardcoding
+    FILE_PATH = config['data_config']['file_path']
+    LOOK_BACK = config['data_config']['look_back']
+    MODEL_TYPE = config['model_config']['model_type']
+    EPOCHS = config['train_config']['epochs']
+    BATCH_SIZE = config['train_config']['batch_size']
     # ==========================================
     
     # --- 1. Get Data ---

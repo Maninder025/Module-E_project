@@ -1,3 +1,8 @@
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+
 import numpy as np
 import matplotlib.pyplot as plt
 import math
@@ -12,7 +17,7 @@ def main():
     
     # ==========================================
     # --- CONFIGURATION SECTION ---
-    with open('configs/config.json', 'r') as f:
+    with open('config.json', 'r') as f:
         config = json.load(f)
 
     # Use variables from config instead of hardcoding

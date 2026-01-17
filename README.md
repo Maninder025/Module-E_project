@@ -11,26 +11,8 @@ This project applies Machine Learning (Random Forest) and Deep Learning (LSTM) t
 * **Config-Driven:** Hyperparameters and settings are managed via JSON configuration files, allowing for easy experimentation without code changes.
 * **Comprehensive Metrics:** Evaluates performance using **R² Score**, **RMSE** (Root Mean Squared Error), and **MAE** (Mean Absolute Error).
 
-## 📂 Project Structure
-```text
-.
-├── configs/
-│   └── config.json       # Hyperparameters (epochs, batch size, model type)
-├── models/
-│   ├── rf_model.pkl      # Saved Random Forest model
-│   └── scaler.pkl        # Saved Data Scaler (critical for inference)
-├── scripts/
-│   ├── eda.py            # Exploratory Data Analysis & Plotting
-│   └── predict.py        # Inference script for new data
-├── src/
-│   ├── data.py           # Data loading, preprocessing, and windowing
-│   ├── model.py          # Architecture definitions (LSTM & RF)
-│   └── train.py          # Main training loop
-│   └── weekly_dataset_with_total_units_sold       # Raw sales data
-├── tests/                # Unit tests for data and model integrity
-├── requirements.txt      # Python dependencies
-└── README.md             # Project documentation
 
+🛠️ Installation
 Clone the repository:
 
 Bash
@@ -86,3 +68,24 @@ To ensure the pipeline is functioning correctly, run the unit tests:
 Bash
 
 python -m unittest discover tests
+
+## 📂 Project Structure
+```text
+.
+├── configs/
+│   └── config.json       # Hyperparameters (epochs, batch size, model type)
+├── data/
+│   └── dataset.csv       # Raw sales data
+├── models/
+│   ├── rf_model.pkl      # Saved Random Forest model
+│   └── scaler.pkl        # Saved Data Scaler (critical for inference)
+├── scripts/
+│   ├── eda.py            # Exploratory Data Analysis & Plotting
+│   └── predict.py        # Inference script for new data
+├── src/
+│   ├── data.py           # Data loading, preprocessing, and windowing
+│   ├── model.py          # Architecture definitions (LSTM & RF)
+│   └── train.py          # Main training loop
+├── tests/                # Unit tests for data and model integrity
+├── requirements.txt      # Python dependencies
+└── README.md             # Project documentation

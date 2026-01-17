@@ -1,0 +1,16 @@
+{
+    "data_config": {
+        "file_path": "weekly_dataset_with_total_unit_sold.xlsx - Sheet1.csv",
+        "look_back": 3,
+        "test_size": 0.2
+    },
+    "model_config": {
+        "model_type": "RF",
+        "lstm_units": 50,
+        "rf_estimators": 100
+    },
+    "train_config": {
+        "epochs": 200,
+        "batch_size": 1
+    }
+}

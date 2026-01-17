@@ -30,3 +30,59 @@ This project applies Machine Learning (Random Forest) and Deep Learning (LSTM) t
 ├── tests/                # Unit tests for data and model integrity
 ├── requirements.txt      # Python dependencies
 └── README.md             # Project documentation
+
+Clone the repository:
+
+Bash
+
+git clone [https://github.com/yourusername/agricultural-forecasting.git](https://github.com/yourusername/agricultural-forecasting.git)
+cd agricultural-forecasting
+Install dependencies:
+
+Bash
+
+pip install -r requirements.txt
+⚙️ Usage
+1. Configure the Experiment
+Open configs/config.json to select your model and settings:
+
+JSON
+
+{
+    "model_config": {
+        "model_type": "RF",   // Options: "RF" or "LSTM"
+        "rf_estimators": 100,
+        "lstm_units": 50
+    }
+}
+2. Train the Model
+Run the main training script. This will train the model, evaluate it, and save the artifacts to the models/ folder.
+
+Bash
+
+python src/train.py
+3. Visual Analysis (EDA)
+To view sales trends and data distribution before training:
+
+Bash
+
+python scripts/eda.py
+4. Make Predictions (Inference)
+To predict sales on a new dataset (e.g., 2025 data):
+
+Bash
+
+python scripts/predict.py
+📊 Model Performance
+The models are evaluated on the following metrics:
+
+R² Score: Measures how well the model explains the variance in the data (Closer to 1.0 is better).
+
+MAE: The average magnitude of errors in unit sales.
+
+🧪 Testing
+To ensure the pipeline is functioning correctly, run the unit tests:
+
+Bash
+
+python -m unittest discover tests

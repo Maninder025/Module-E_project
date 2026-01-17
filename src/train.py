@@ -1,6 +1,6 @@
 import sys
 import os
-
+import joblib
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 import numpy as np
@@ -27,6 +27,23 @@ def main():
     EPOCHS = config['train_config']['epochs']
     BATCH_SIZE = config['train_config']['batch_size']
     # ==========================================
+
+    # Create a 'models' folder if it doesn't exist
+    if not os.path.exists('models'):
+        os.makedirs('models')
+
+    if MODEL_TYPE == "RF":
+        # Save Random Forest
+        joblib.dump(model, 'models/rf_model.pkl')
+        joblib.dump(scaler, 'models/scaler.pkl') # Save scaler too!
+        print("Model and Scaler saved to 'models/' folder.")
+        
+    elif MODEL_TYPE == "LSTM":
+        # Save LSTM
+        model.save('models/lstm_model.h5')
+        joblib.dump(scaler, 'models/scaler.pkl')
+        print("Model and Scaler saved to 'models/' folder.")
+
     
     # --- 1. Get Data ---
     print("Loading and processing data...")
@@ -124,4 +141,5 @@ def main():
     plt.show()
 
 if __name__ == "__main__":
+
     main()

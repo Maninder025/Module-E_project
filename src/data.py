@@ -37,4 +37,7 @@ def load_and_preprocess_data(filepath, look_back=3):
     X_train, X_test = X[0:train_size], X[train_size:len(X)]
     y_train, y_test = y[0:train_size], y[train_size:len(y)]
     
+
     return X_train, y_train, X_test, y_test, scaler
+
+print("Data loading and preprocessing module ready.")

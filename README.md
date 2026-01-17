@@ -15,8 +15,8 @@ This project applies Machine Learning (Random Forest) and Deep Learning (LSTM) t
 ## 🛠️ Installation
 Clone the repository:
 
-git clone [https://github.com/yourusername/agricultural-forecasting.git](https://github.com/yourusername/agricultural-forecasting.git)
-cd agricultural-forecasting
+git clone [https://github.com/yourusername/agricultural-forecasting.git](https://github.com/Maninder025/Module-E_project)
+cd Module-E_project
 ## Install dependencies:
 
 pip install -r requirements.txt
